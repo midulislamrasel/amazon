@@ -1,0 +1,27 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1C2B35;
+}
+nav img{
+    margin-left: 40px;
+    padding: 10px 15px;
+    color: #fff;
+}
+
+.navlist{
+    margin-right: 40px;
+}
+.navlist a{
+    padding: 10px 15px;
+    text-decoration: none;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: 0.005em;
+    color: #FFFFFF;
+}
+
