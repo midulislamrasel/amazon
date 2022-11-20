@@ -16,20 +16,21 @@ const Shop = () => {// thake//
     }, [])
     
 
+
     useEffect(() => {
         const storedCart = getStoreCard();
+        const saveCard = [];
         for (const id in storedCart){
-            const addedProduct =products.find(product => product.id === id);
-            console.log(addedProduct);
+            const addedProduct = products.find(product => product.id === id);
+            if (addedProduct) {
+                const quantity = storedCart[id];
+                addedProduct.quantity = quantity;
+                saveCard.push(addedProduct);
+            }
+            // console.log(addedProduct);
         }
-    }
-    ,[])
-
-
-
-
-
-
+        setCart(saveCard)
+    },[products])
 
 
 
@@ -44,9 +45,10 @@ const addToCard = (product) => {
         <div className='shop-container'>
             <div className='products-container'>
                 {
-                    products.map(product => <Product product={product} key={product.id}
-                    addToCard={addToCard}
-                        
+                    products.map(product => <Product
+                        product={product}
+                        key={product.id}
+                        addToCard={addToCard}
                     ></Product>)
                 }
             </div>
